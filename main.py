@@ -1,50 +1,48 @@
-# informações de tarifas nesse site https://agencia.sanesul.ms.gov.br/Content/TARIFAS.pdf : Residencia normal
+consumo = int(input("digite o valor do consumo a o mês: "))
 
-litros = float(input("Digite a quantidade de litros comsumida de água, com ponto e não virgula: "))
-
-def calculo(m):
-    tarifa_fixa = 13.47
-    contrib_servicos_de_lixo = 2.96
-
-    if m >= 1 and m <=10:
-        tarifa_da_agua= 5.13
-        tarifa_do_esgoto = 2.56
-        total_a_pagar = m*(tarifa_da_agua+tarifa_do_esgoto+tarifa_fixa+contrib_servicos_de_lixo)
-    else:
-        if m >= 11 and m <= 15:
-            tarifa_da_agua = 6.06
-            tarifa_do_esgoto = 3.03
-            total_a_pagar = m*(tarifa_da_agua+tarifa_do_esgoto+tarifa_fixa+contrib_servicos_de_lixo)
-        else:
-            if m >= 16 and m <= 20:
-                tarifa_da_agua = 6.99
-                tarifa_do_esgoto = 3.50
-                total_a_pagar = m*(tarifa_da_agua+tarifa_do_esgoto+tarifa_fixa+contrib_servicos_de_lixo)
-            else:
-                if m >= 21 and m <= 25:
-                    tarifa_da_agua = 8.09
-                    tarifa_do_esgoto = 4.05
-                    total_a_pagar = m*(tarifa_da_agua+tarifa_do_esgoto+tarifa_fixa+contrib_servicos_de_lixo)
-                else:
-                    if m >= 26 and m <= 30:
-                        tarifa_da_agua = 10.20
-                        tarifa_do_esgoto = 5.10
-                        total_a_pagar = m*(tarifa_da_agua+tarifa_do_esgoto+tarifa_fixa+contrib_servicos_de_lixo)
-                    else:
-                        if m >= 31 and m <= 50:
-                            tarifa_da_agua = 12.09
-                            tarifa_do_esgoto = 6.05
-                            total_a_pagar = m*(tarifa_da_agua+tarifa_do_esgoto+tarifa_fixa+contrib_servicos_de_lixo)
-                        else:
-                            if m > 50:
-                                tarifa_da_agua = 13.34
-                                tarifa_do_esgoto = 6.67
-                                total_a_pagar = m*(tarifa_da_agua+tarifa_do_esgoto+tarifa_fixa+contrib_servicos_de_lixo)
-                            else:
-                                print("Digite um valor maior que 1000 litros")
-    
-    return total_a_pagar
+if consumo >= 1 and consumo <= 50:
+  def encontrar_posicao1(valor, array):
+      try:
+          posicao = array.index(valor)
+          return posicao
+      except ValueError:
+          return len(array) - 1
       
-litros_para_metros_cubicos = litros/1000;
-resultado = calculo(litros_para_metros_cubicos)
-print(f"O valor total a pagar é {resultado:.2f}")
+
+  
+  def encontrar_posicao2(valor, array):
+      try:
+          posicao = array.index(valor)
+          return posicao
+      except ValueError:
+          return len(array) - 1
+      
+  def encontrar_posicao3(valor, array):
+      try:
+          posicao = array.index(valor)
+          return posicao
+      except ValueError:
+          return len(array) - 1
+      
+  if consumo >= 1 or consumo <= 10 :
+    array = [0,1,2,3,4,5,6,7,8,9,10]
+    resultado1 = encontrar_posicao1(consumo, array)
+    tarifa_de_esgoto1 = 2.56
+    tarifa_agua1 =  5.13
+    valor_da_agua1 = resultado1*tarifa_agua1+tarifa_de_esgoto1
+    
+    
+
+  if consumo >= 11 or consumo <= 15:  
+    array2 = [10,11,12,13,14,15]
+    resultado2 = encontrar_posicao2(consumo, array2)
+    tarifa_de_esgoto2 = 3.03
+    tarifa_agua2 = 6.06
+    valor_da_agua2 = resultado2*tarifa_agua2+tarifa_de_esgoto2
+
+  if consumo >= 16 or consumo <= 20:
+    array3 = [15,16,17,18,19,20]
+    resultado3 = encontrar_posicao3(consumo, array3)
+    tarifa_agua3 = 6.99
+    tarifa_de_esgoto3 = 3.50
+    valor_da_agua3 = resultado3*tarifa_agua3+tarifa_de_esgoto3
